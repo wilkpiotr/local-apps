@@ -14,10 +14,19 @@
     input.input#calories {
       width:100px;
     }
+    #product-mock {
+      display: none;
+    }
+    #no-food-message {
+      display: none;
+    }
+    #app {
+      display: none;
+    }
     </style>
   </head>
   <body>
-    <section class="hero is-light" id="hello">
+    <section id="hello" class="hero is-light">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
@@ -29,47 +38,53 @@
           <div class="field">
             <label class="label">Your name</label>
             <div class="control">
-              <input class="input" type="text">
+              <input id="hello-name" class="input" type="text">
             </div>
           </div>  
           <div class="field">
             <label class="label">Max calories</label>
             <div class="control">
-              <input class="input" type="number">
+              <input id="hello-calories" class="input" type="number">
             </div>
           </div>   
           <div class="field">
               <p class="control">
-                <button id="food-eat" class="button is-primary">
+                <button id="hello-start" class="button is-primary">
                   Start!
                 </button>
               </p>
-          </div>       
+          </div> 
+          <div id="hello-error" style="display: none" >
+            <span class="tag is-danger"></span> 
+          </div> 
         </div>
       </div>
     </section>
-    <section class="section">
+    <section id="app" class="section">
       <div class="container" id="food-table">
         <div class="columns">
           <div class="column is-half is-three-quarters-mobile">
-            <nav class="panel">
+            <nav class="panel" id="product-list">
               <p class="panel-heading">
                 <span class="icon">
                   <i class="fas fa-utensils"></i>
                 </span>
-                <span>Maciej daily food table</span>
+                <span><span id="user-name-label">Maciej</span> daily food table</span>
                 <span style="float:right" id="calories-counter" class="tag is-info is-medium">10000  / 20000 kcal</span>
               </p>
-              <div class="panel-block">
-                <p id="no-food-message" class="control has-icons-left">
+              <div class="panel-block" id="no-food-message">
+                <p class="control has-icons-left">
                   You are hungry! Eat something!
                 </p>
               </div>
-              <div class="panel-block">
+              <div class="panel-block" id="product-mock" >
                 <p class="control">
                     <span class="icon has-text-success">
                         <i class="fas fa-check-square"></i>
-                    </span>Apple - 1000 kcal
+                    </span>
+                    <span>
+                      Apple - 1000 kcal
+                    </span>
                 </p>
               </div>
             </nav>
