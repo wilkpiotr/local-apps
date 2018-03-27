@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Food</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src='/food.js' ></script>
+    <style>
+    input.input {
+      width: 300px;
+    }
+    input.input#calories {
+      width:100px;
+    }
+    </style>
+  </head>
+  <body>
+    <section class="hero is-light" id="hello">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Hello in Food Table App
+          </h1>
+          <h2 class="subtitle">
+            Best application to track your daily diet
+          </h2>
+          <div class="field">
+            <label class="label">Your name</label>
+            <div class="control">
+              <input class="input" type="text">
+            </div>
+          </div>  
+          <div class="field">
+            <label class="label">Max calories</label>
+            <div class="control">
+              <input class="input" type="number">
+            </div>
+          </div>   
+          <div class="field">
+              <p class="control">
+                <button id="food-eat" class="button is-primary">
+                  Start!
+                </button>
+              </p>
+          </div>       
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container" id="food-table">
+        <div class="columns">
+          <div class="column is-half is-three-quarters-mobile">
+            <nav class="panel">
+              <p class="panel-heading">
+                <span class="icon">
+                  <i class="fas fa-utensils"></i>
+                </span>
+                <span>Maciej daily food table</span>
+                <span style="float:right" id="calories-counter" class="tag is-info is-medium">10000  / 20000 kcal</span>
+              </p>
+              <div class="panel-block">
+                <p id="no-food-message" class="control has-icons-left">
+                  You are hungry! Eat something!
+                </p>
+              </div>
+              <div class="panel-block">
+                <p class="control">
+                    <span class="icon has-text-success">
+                        <i class="fas fa-check-square"></i>
+                    </span>Apple - 1000 kcal
+                </p>
+              </div>
+            </nav>
+          </div>
+        </div> 
+        </div>
+        <div class="container level" style="margin-top: 20px;">
+            <div class="level-left">
+              <div class="level-item">
+                <div class="field">
+                  <div class="control">
+                    <input id="calories" class="input" type="number" placeholder="Calories">
+                  </div>
+                </div>
+              </div>
+              <div class="level-item">
+                <div class="field">
+                  <p class="control">
+                    <input class="input" id="food" type="text" style="width: 300px" placeholder="Product name">
+                  </p>
+                </div>
+              </div>
+              <div class="level-item">
+                <div class="field">
+                  <p class="control">
+                    <button id="food-eat" class="button is-primary">
+                      Eat that!
+                    </button>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+  </body>
+</html>
