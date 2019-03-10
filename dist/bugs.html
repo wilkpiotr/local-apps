@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src='/bugs.js' ></script>
+    <style>svg{margin: 7px} .checkbox{margin: 0 10px 0 10px}</style>
   </head>
   <body>
   <section class="section">
@@ -20,10 +21,22 @@
               </span>
               <span>High</span>
             </p>
-            <div class="panel-block" id="high">
-              <p class="control has-icons-left">
-                No bugs
-              </p>
+            <div class="panel-block is-block content" >
+              <ul id="high" style="list-style-type: none">
+                <li>
+                  <p class="control has-icons-left is-inline">No bugs</p>
+                  <label>
+                    <input type="checkbox" class="checkbox is-hidden">
+                  </label>
+                  <span class="icon is-hidden">
+                    <i class="fas fa-angle-double-left" data-icon="left"></i>
+                  </span>
+                  <span class="icon is-hidden">
+                      <i class="fas fa-angle-double-right" data-icon="right"></i>
+                  </span>
+                </li>
+              </ul>
+            
             </div>
           </nav>
         </div>
@@ -35,10 +48,21 @@
                 </span>
                 <span>Middle</span>
               </p>
-              <div class="panel-block" id="middle">
-                <p class="control has-icons-left">
-                  No bugs
-                </p>
+              <div class="panel-block is-block content">
+                <ul id="middle" style="list-style-type: none">
+                  <li>
+                    <p class="control has-icons-left is-inline">No bugs</p>
+                    <label>
+                      <input type="checkbox" class="checkbox is-hidden">
+                    </label>
+                    <span class="icon is-hidden">
+                      <i class="fas fa-angle-double-left" data-icon="left"></i>
+                    </span>
+                    <span class="icon is-hidden">
+                      <i class="fas fa-angle-double-right" data-icon="right"></i>
+                    </span>
+                  </li>
+                </ul>
               </div>
             </nav>
         </div>
@@ -48,12 +72,23 @@
                 <span class="icon">
                   <i class="fas fa-bug"></i>
                 </span>
-                <span>Middle</span>
+                <span>Low</span>
               </p>
-              <div class="panel-block" id="low">
-                <p class="control has-icons-left">
-                  No bugs
-                </p>
+              <div class="panel-block is-block content">
+                <ul id="low" style="list-style-type: none">
+                  <li>
+                    <p class="control has-icons-left is-inline">No bugs</p>
+                    <label>
+                      <input type="checkbox" class="checkbox is-hidden">
+                    </label>
+                    <span class="icon is-hidden">
+                      <i class="fas fa-angle-double-left" data-icon="left"></i>
+                    </span>
+                    <span class="icon is-hidden">
+                      <i class="fas fa-angle-double-right" data-icon="right"></i>
+                    </span>
+                  </li>
+                </ul>
               </div>
             </nav>
         </div>

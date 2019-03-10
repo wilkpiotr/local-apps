@@ -1,4 +1,3 @@
-
 import {q, qAll} from '../../util';
 import {getError} from './error';
 import {initApp} from '../app/app';
@@ -27,7 +26,7 @@ export const bindHelloForm = () => {
   });
 }
 
-const isValid = (name, calories) => {
+export const isValid = (name, calories) => {
   const isNameValid = name.trim().length > 0;
   const isCaloriesValid = calories > 0;
   return isNameValid && isCaloriesValid;
