@@ -1,17 +1,25 @@
+import {q, qAll} from '../util';
 
-export const showMovie = () => {
-    const movieDetails = document.querySelector('#movie-details');
-    const movieContainer = document.querySelector('#movies-list');
-    const selectedMovieTitle = document.querySelector('#movie-title')
-    const selectedMovieDescription = document.querySelector('.message-body')
+export const showMovieDetails = () => {
+    const movieDetails = q('#movie-details');
+    const movieContainer = q('#movies-list');
+    const selectedMovieTitle = q('#movie-title')
+    const selectedMovieDescription = q('.message-body')
     movieContainer.addEventListener('click', (e) => {
-      if (e.target.classList.contains('list-item')) {
-        selectedMovieTitle.innerText = e.target.id;
-        selectedMovieDescription.innerText = e.target.firstElementChild.innerText;
-        movieDetails.style.display = "block";
-      }
-      else {
-        return;
+      if ('listItem' in e.target.dataset) {
+        if (e.target.classList.contains('active')) {
+          e.target.classList.remove('active');
+          movieDetails.style.display = 'none';
+        } else {
+          const previous = document.querySelector('.active');
+          if (previous) {
+            previous.classList.remove('active');
+          }
+          selectedMovieTitle.textContent = e.target.dataset.title;
+          selectedMovieDescription.textContent = e.target.firstElementChild.textContent;
+          e.target.classList.add('active');
+          movieDetails.style.display = "block";
+        }
       }
     })
   }

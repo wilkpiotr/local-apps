@@ -1,23 +1,31 @@
-import {addMovieToList} from './list';
-import {showMovie} from './details';
+import {q, qAll} from '../util'
+import {addMovieToList, filterMovies} from './list';
+import {showMovieDetails} from './details';
+import {isValid} from './valid';
+import {saveMoviesToLocalStorage, loadSavedMovies} from './local_storage';
 
-export const doItAll = () => {
-    addMovie();
-    showMovie();
+export const bindMovies = () => {
+  loadSavedMovies();
+  addMovie();
+  showMovieDetails();
+  filterMovies();
 }
 
 const addMovie = () => {
-    const addButton = document.querySelector('#bug-add');
-    const movieType = document.querySelector('#movie-type');
-    const movieTitle = document.querySelector('input.input')
-    const movieDescription = document.querySelector('textarea.textarea')
+    const addButton = q('#bug-add');
+    const movieType = q('#movie-type');
+    const movieTitle = q('input.input')
+    const movieDescription = q('textarea.textarea')
     addButton.addEventListener('click', (e) => {
-      addMovieToList(movieType.value, movieTitle.value, movieDescription.value)
-      resetAddingSection(movieType, movieTitle, movieDescription);
+      if (isValid(movieType.value, movieTitle.value, movieDescription.value)) {
+      addMovieToList(movieType.value, movieTitle.value, movieDescription.value);
+      saveMoviesToLocalStorage(movieType.value, movieTitle.value, movieDescription.value)
+      clearForm(movieType, movieTitle, movieDescription);
+      }
     })
   }
-  const resetAddingSection = (type, title, description) => {
-    const movieType = document.querySelector('#movie-type');
+  const clearForm = (type, title, description) => {
+    const movieType = q('#movie-type');
     type.value = movieType.firstElementChild.value;
     title.value = '';
     description.value = '';
